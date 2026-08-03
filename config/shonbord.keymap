@@ -28,6 +28,15 @@
 
             tapping-term-ms = <350>;
         };
+
+        td_parenthesis: td_parenthesis {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PARENTHESIS";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N8)>, <&kp LS(N9)>;
+
+            tapping-term-ms = <350>;
+        };
     };
 
     keymap {
@@ -36,10 +45,10 @@
         base {
             display-name = "Base";
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T                                               &kp Y          &kp U  &kp I      &kp O       &mt LEFT_ALT P
-&kp A  &kp S  &kp D  &kp F  &kp G                                               &kp H          &kp J  &kp K      &kp L       &kp SEMICOLON
-&kp Z  &kp X  &kp C  &kp V  &kp B                                               &kp N          &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-                            &mt LEFT_SHIFT DELETE  &lt 1 SPACE    &lt 2 RETURN  &kp BACKSPACE
+&kp Q  &kp W  &kp E  &kp R  &kp T                                                 &kp Y                     &kp U  &kp I      &kp O       &mt LEFT_ALT P
+&kp A  &kp S  &kp D  &kp F  &kp G                                                 &kp H                     &kp J  &kp K      &kp L       &kp SEMICOLON
+&kp Z  &kp X  &kp C  &kp V  &kp B                                                 &kp N                     &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
+                            &mt LEFT_CONTROL DELETE  &lt 1 SPACE    &lt 2 RETURN  &mt LEFT_SHIFT BACKSPACE
             >;
         };
 
@@ -54,9 +63,9 @@
 
         right_mod {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans        &trans         &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans        &trans         &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &td_qst_mark  &td_excl_mark  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans        &td_parenthesis  &trans            &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans        &trans           &kp RA(NUMBER_2)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &td_qst_mark  &td_excl_mark    &trans            &trans  &trans
                                 &trans  &trans    &trans  &trans
             >;
         };
