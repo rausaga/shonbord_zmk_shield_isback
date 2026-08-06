@@ -2,15 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    macros {
-        excl_mark: excl_mark {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp LS(MINUS)>;
-            label = "EXCL_MARK";
-        };
-    };
-
     behaviors {
         td_qst_mark: td_qst_mark {
             compatible = "zmk,behavior-tap-dance";
@@ -71,6 +62,76 @@
             tapping-term-ms = <350>;
             bindings = <&kp NUMBER_3>, <&kp LS(NUMBER_3)>, <&kp RA(NUMBER_3)>;
         };
+
+        td_four_symbols: td_four_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_FOUR_SYMBOLS";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_4>, <&kp LS(NUMBER_4)>, <&kp RA(NUMBER_4)>;
+
+            tapping-term-ms = <350>;
+        };
+
+        td_five_symbols: td_five_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_FIVE_SYMBOLS";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp LS(N5)>;
+
+            tapping-term-ms = <350>;
+        };
+
+        td_six_symbols: td_six_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SIX_SYMBOLS";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_6>, <&kp LS(NUMBER_6)>, <&kp RA(NUMBER_6)>;
+
+            tapping-term-ms = <350>;
+        };
+
+        td_seven_symbols: td_seven_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SEVEN_SYMBOLS";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp LS(N7)>;
+
+            tapping-term-ms = <350>;
+        };
+
+        td_eight_symbols: td_eight_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EIGHT_SYMBOLS";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp LS(N8)>;
+
+            tapping-term-ms = <350>;
+        };
+
+        td_nine_symbols: td_nine_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NINE_SYMBOLS";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp LS(N9)>;
+
+            tapping-term-ms = <350>;
+        };
+
+        td_zero_symbols: td_zero_symbols {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ZERO_SYMBOLS";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&kp N0>, <&kp LS(N0)>;
+        };
+
+        td_acentos: td_acentos {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ACENTOS";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp LEFT_BRACKET>;
+        };
     };
 
     combos {
@@ -84,6 +145,11 @@
         QWE_Escape {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1 2>;
+        };
+
+        IOP_Windows {
+            bindings = <&kp LEFT_WIN>;
+            key-positions = <7 8 9>;
         };
     };
 
@@ -111,9 +177,9 @@
 
         right_mod {
             bindings = <
-&kp LS(NUMBER_1)  &td_two_symbols  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                    &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(N8)        &kp LS(N9)  &kp LS(N0)
-&trans            &trans           &trans            &trans            &trans                              &none             &trans      &kp RA(NUMBER_2)  &trans      &kp SINGLE_QUOTE
-&trans            &trans           &trans            &trans            &trans                              &td_qst_mark      &none       &trans            &trans      &trans
+&td_one_symbols  &td_two_symbols  &td_three_symbols  &td_four_symbols  &td_five_symbols                    &td_six_symbols  &td_seven_symbols  &td_eight_symbols  &td_nine_symbols  &td_zero_symbols
+&trans           &trans           &trans             &trans            &trans                              &none            &trans             &kp RA(NUMBER_2)   &td_acentos       &kp SINGLE_QUOTE
+&trans           &trans           &trans             &trans            &trans                              &td_qst_mark     &none              &trans             &trans            &trans
                                                                        &mo 3             &trans    &trans  &trans
             >;
         };
