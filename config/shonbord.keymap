@@ -17,14 +17,14 @@
             label = "QuestionMarks";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&kp MINUS>, <&kp LS(EQUAL)>;
+            bindings = <&kp QUESTION>, <&kp LS(EQUAL)>;
         };
 
         td_excl_mark: td_excl_mark {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EXCL_MARK";
             #binding-cells = <0>;
-            bindings = <&kp NUMBER_1>, <&kp EQUAL>;
+            bindings = <&kp LS(NUMBER_1)>, <&kp EQUAL>;
 
             tapping-term-ms = <350>;
         };
