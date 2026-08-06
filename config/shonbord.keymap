@@ -7,7 +7,6 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QuestionMarks";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
             bindings = <&kp LS(MINUS)>, <&kp LS(EQUAL)>;
         };
 
@@ -16,8 +15,6 @@
             label = "TD_EXCL_MARK";
             #binding-cells = <0>;
             bindings = <&kp LS(NUMBER_1)>, <&kp EQUAL>;
-
-            tapping-term-ms = <350>;
         };
 
         td_parenthesis: td_parenthesis {
@@ -25,15 +22,12 @@
             label = "TD_PARENTHESIS";
             #binding-cells = <0>;
             bindings = <&kp LS(N8)>, <&kp LS(N9)>;
-
-            tapping-term-ms = <350>;
         };
 
         td_equals_plus: td_equals_plus {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EQUALS_PLUS";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
             bindings = <&kp LS(NUMBER_0)>, <&kp RIGHT_BRACKET>;
         };
 
@@ -41,35 +35,28 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_TWO_SYMBOLS";
             #binding-cells = <0>;
-            bindings = <&kp NUMBER_2>, <&kp LS(NUMBER_2)>, <&kp RA(NUMBER_2)>;
-
-            tapping-term-ms = <350>;
+            bindings = <&kp LS(NUMBER_2)>, <&kp RA(NUMBER_2)>;
         };
 
         td_one_symbols: td_one_symbols {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ONE_SYMBOLS";
             #binding-cells = <0>;
-            bindings = <&kp NUMBER_1>, <&kp LS(NUMBER_1)>, <&kp RA(NUMBER_1)>;
-
-            tapping-term-ms = <350>;
+            bindings = <&kp LS(NUMBER_1)>, <&kp RA(NUMBER_1)>;
         };
 
         td_three_symbols: td_three_symbols {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_THREE_SYMBOLS";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&kp NUMBER_3>, <&kp LS(NUMBER_3)>, <&kp RA(NUMBER_3)>;
+            bindings = <&kp LS(NUMBER_3)>, <&kp RA(NUMBER_3)>;
         };
 
         td_four_symbols: td_four_symbols {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_FOUR_SYMBOLS";
             #binding-cells = <0>;
-            bindings = <&kp NUMBER_4>, <&kp LS(NUMBER_4)>, <&kp RA(NUMBER_4)>;
-
-            tapping-term-ms = <350>;
+            bindings = <&kp LS(NUMBER_4)>, <&kp RA(NUMBER_4)>;
         };
 
         td_five_symbols: td_five_symbols {
@@ -77,17 +64,13 @@
             label = "TD_FIVE_SYMBOLS";
             #binding-cells = <0>;
             bindings = <&kp N5>, <&kp LS(N5)>;
-
-            tapping-term-ms = <350>;
         };
 
         td_six_symbols: td_six_symbols {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SIX_SYMBOLS";
             #binding-cells = <0>;
-            bindings = <&kp NUMBER_6>, <&kp LS(NUMBER_6)>, <&kp RA(NUMBER_6)>;
-
-            tapping-term-ms = <350>;
+            bindings = <&kp LS(NUMBER_6)>, <&kp RA(NUMBER_6)>;
         };
 
         td_seven_symbols: td_seven_symbols {
@@ -95,8 +78,6 @@
             label = "TD_SEVEN_SYMBOLS";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp LS(N7)>;
-
-            tapping-term-ms = <350>;
         };
 
         td_eight_symbols: td_eight_symbols {
@@ -104,8 +85,6 @@
             label = "TD_EIGHT_SYMBOLS";
             #binding-cells = <0>;
             bindings = <&kp N8>, <&kp LS(N8)>;
-
-            tapping-term-ms = <350>;
         };
 
         td_nine_symbols: td_nine_symbols {
@@ -113,15 +92,12 @@
             label = "TD_NINE_SYMBOLS";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp LS(N9)>;
-
-            tapping-term-ms = <350>;
         };
 
         td_zero_symbols: td_zero_symbols {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ZERO_SYMBOLS";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
             bindings = <&kp N0>, <&kp LS(N0)>;
         };
 
@@ -129,8 +105,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ACENTOS";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
             bindings = <&kp SINGLE_QUOTE>, <&kp LEFT_BRACKET>;
+        };
+
+        td_dash: td_dash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DASH";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp LS(SLASH)>;
         };
     };
 
@@ -151,6 +133,11 @@
             bindings = <&kp LEFT_WIN>;
             key-positions = <7 8 9>;
         };
+
+        qwe-tab {
+            bindings = <&kp TAB>;
+            key-positions = <0 1 2>;
+        };
     };
 
     keymap {
@@ -159,10 +146,10 @@
         base {
             display-name = "Base";
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T                                       &kp Y            &kp U  &kp I      &kp O       &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G                                       &kp H            &kp J  &kp K      &kp L       &kp SEMICOLON
-&kp Z  &kp X  &kp C  &kp V  &kp B                                       &kp N            &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-                            &mo 1  &mt LEFT_CONTROL SPACE    &kp ENTER  &lt 2 BACKSPACE
+&kp Q  &kp W  &kp E             &kp R               &kp T                                          &kp Y            &kp U               &kp I             &kp O       &kp P
+&kp A  &kp S  &mt LEFT_SHIFT D  &mt LEFT_CONTROL F  &kp G                                          &kp H            &mt LEFT_CONTROL J  &mt LEFT_SHIFT K  &kp L       &kp SEMICOLON
+&kp Z  &kp X  &kp C             &kp V               &kp B                                          &kp N            &kp M               &kp COMMA         &kp PERIOD  &kp SLASH
+                                                    &mo 1  &mt LEFT_ALT SPACE    &kp LEFT_CONTROL  &lt 2 BACKSPACE
             >;
         };
 
