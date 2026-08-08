@@ -198,7 +198,7 @@
 &none   &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &tog 4                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans  &mo 3
             >;
         };
 
